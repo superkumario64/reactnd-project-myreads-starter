@@ -22,6 +22,7 @@ class BookShelf extends Component {
               <div className="bookshelf-books">
                 <BookList
                   books={this.filterBooks("currentlyReading")}
+                  onMoveBook={this.props.onMoveBook}
                 />
               </div>
             </div>
@@ -30,6 +31,7 @@ class BookShelf extends Component {
               <div className="bookshelf-books">
                 <BookList
                   books={this.filterBooks("wantToRead")}
+                  onMoveBook={this.props.onMoveBook}
                 />
               </div>
             </div>
@@ -38,6 +40,7 @@ class BookShelf extends Component {
               <div className="bookshelf-books">
                 <BookList
                   books={this.filterBooks("read")}
+                  onMoveBook={this.props.onMoveBook}
                 />
               </div>
             </div>

@@ -8,7 +8,8 @@ class BookList extends Component {
         {this.props.books.map((book) => (
           <Book
             book={book}
-            key={book.title}
+            key={book.id}
+            onMoveBook={this.props.onMoveBook}
           />
         ))}
       </ol>

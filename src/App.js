@@ -20,12 +20,28 @@ class BooksApp extends React.Component {
     })
   }
 
+  moveBook = (book, shelf) => {
+    let newState = this.state;
+    let bookIndex = newState.books.findIndex((fbook) => {
+     return fbook.id === book.id
+    });
+    newState.books[bookIndex].shelf = shelf
+
+    this.setState(() => ({
+      books: newState.books
+    }))
+
+
+    console.log(bookIndex)
+  }
+
   render() {
     return (
       <div className="app">
         <Route exact path='/' render={() => (
           <BookShelf
             books={this.state.books}
+            onMoveBook={this.moveBook}
           />
         )} />
         <Route path='/search' render={() => (
