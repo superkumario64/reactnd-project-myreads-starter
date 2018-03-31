@@ -21,18 +21,16 @@ class BooksApp extends React.Component {
   }
 
   moveBook = (book, shelf) => {
-    let newState = this.state;
-    let bookIndex = newState.books.findIndex((fbook) => {
-     return fbook.id === book.id
-    });
-    newState.books[bookIndex].shelf = shelf
-
-    this.setState(() => ({
-      books: newState.books
-    }))
-
-
-    console.log(bookIndex)
+    BooksAPI.update(book, shelf).then(() => {
+      let newState = this.state;
+      let bookIndex = newState.books.findIndex((fbook) => {
+        return fbook.id === book.id
+      });
+      newState.books[bookIndex].shelf = shelf
+      this.setState(() => ({
+        books: newState.books
+      }))
+    })
   }
 
   render() {
