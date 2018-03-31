@@ -26,7 +26,12 @@ class BooksApp extends React.Component {
       let bookIndex = newState.books.findIndex((fbook) => {
         return fbook.id === book.id
       });
-      newState.books[bookIndex].shelf = shelf
+      if(bookIndex >= 0){
+        newState.books[bookIndex].shelf = shelf
+      } else {
+        book.shelf = shelf;
+        newState.books.push(book);
+      }
       this.setState(() => ({
         books: newState.books
       }))
@@ -43,7 +48,9 @@ class BooksApp extends React.Component {
           />
         )} />
         <Route path='/search' render={() => (
-          <SearchBook />
+          <SearchBook
+            onMoveBook={this.moveBook}
+          />
         )} />
       </div>
     )
