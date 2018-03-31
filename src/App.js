@@ -7,11 +7,26 @@ import { Route } from 'react-router-dom'
 
 
 class BooksApp extends React.Component {
+  state = {
+    books: []
+  }
+
+  componentDidMount(){
+    BooksAPI.getAll().then((books) => {
+      console.log(books)
+      this.setState(() => ({
+        books
+      }))
+    })
+  }
+
   render() {
     return (
       <div className="app">
         <Route exact path='/' render={() => (
-          <BookShelf />
+          <BookShelf
+            books={this.state.books}
+          />
         )} />
         <Route path='/search' render={() => (
           <SearchBook />
