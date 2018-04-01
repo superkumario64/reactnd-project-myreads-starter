@@ -15,7 +15,17 @@ class SearchBook extends Component {
       query: trimmed_query
     }))
     BooksAPI.search(trimmed_query).then((books) => {
-      if (books) {
+      if (Array.isArray(books)) {
+        books.map((book) => {
+          let ownBook = this.props.books.filter((ownedBook) => {
+            return ownedBook.id === book.id
+          })
+          if (Array.isArray(ownBook) && ownBook.length > 0) {
+            return book.shelf = ownBook[0].shelf;
+          } else {
+            return book.shelf = "none"
+          }
+        })
         this.setState(() => ({
           results: books
         }))
@@ -24,7 +34,6 @@ class SearchBook extends Component {
           results: []
         }))
       }
-      console.log(books)
     });
   }
 
