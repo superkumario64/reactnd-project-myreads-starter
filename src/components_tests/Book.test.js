@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import BookList from "./../components/BookList";
+import Book from "./../components/Book";
 
 /**
  This course is not designed to teach Test Driven Development.
