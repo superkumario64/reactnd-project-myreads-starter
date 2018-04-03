@@ -1,5 +1,24 @@
 # MyReads Project
 
+### KWA notes
+
+Steps to get working locally:
+* `git clone https://github.com/superkumario64/reactnd-project-myreads-starter.git`
+* `cd reactnd-project-myreads-starter`
+* `npm install`
+* `npm start`
+(optionally use yarn instead of npm)
+
+extras:
+* View a production build here: https://superkumario64.com/
+  * (Hosted on S3 with Cloudfront serving as cdn, TODO: ssl termination on cloudfront)
+* componets_test directory has some automated test
+  * run with 'npm test'
+
+
+
+### /KWA notes
+
 This is the starter template for the final assessment project for Udacity's React Fundamentals course. The goal of this template is to save you time by providing a static example of the CSS and HTML markup that may be used, but without any of the React code that is needed to complete the project. If you choose to start with this template, your job will be to add interactivity to the app by refactoring the static code in this template.
 
 Of course, you are free to start this project from scratch if you wish! Just be sure to use [Create React App](https://github.com/facebookincubator/create-react-app) to bootstrap the project.
