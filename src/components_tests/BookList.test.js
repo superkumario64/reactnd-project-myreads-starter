@@ -39,4 +39,6 @@ it('renders without crashing', () => {
       onMoveBook={doNothing => doNothing}
     />
   ), div)
+  expect(div.childNodes[0].className).toBe("books-grid")
+  expect(div.childNodes[0].getElementsByTagName("li").length).toBe(3)
 })
