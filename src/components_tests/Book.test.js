@@ -26,4 +26,9 @@ it('renders without crashing', () => {
       onMoveBook={doNothing => doNothing}
     />
   ), div)
+
+  expect(div.getElementsByClassName("book-title")[0].innerHTML).toBe("Needful Things")
+  expect(div.getElementsByClassName("book-authors")[0].innerHTML).toBe("Stephen King")
+  expect(div.getElementsByClassName("book-shelf-changer")[0].childNodes[0].value).toBe("read")
+
 })
